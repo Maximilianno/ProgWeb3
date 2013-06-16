@@ -1,0 +1,79 @@
+﻿.category
+{ background-color:White;
+  margin:50px 15px 15px 0px;
+  height:50px;
+  text-align: center;
+    }
+
+.catLabelControl
+{
+    font-size:20px;
+    }
+
+.catDDListControl
+{
+ 
+ background:#FFF;
+ margin:10px 10px 10px 10px !important;
+ padding:10px 10px 10px 10px !important;
+ width:300px;
+ font-family: arial,helvetica,sans-serif; 
+ font-size:large;
+ text-align:center;
+ border-left-color:#BBB;
+ border-right-color:#BBB;
+ border-top-color:#BBB;
+ border-bottom-color:#BBB;
+ border-left-style:solid;
+ border-left-width:1px;
+ border-right-style:solid;
+ border-right-width:1px;
+ border-top-style:solid;
+ border-top-width:1px;
+ border-bottom-style:solid;
+ border-bottom-width:1px;
+ 
+}
+ 
+ .shops
+ {background-color:White;
+  width:960px;
+  height:auto;
+  margin-top:50px;
+ }
+    
+.column
+{ margin:50px 15px 15px 80px;
+  width:200px;
+  height:300px;
+  border-style:dotted; 
+  border-width:1px ; 
+  border-color:#000000;
+  float:left;
+  background-color:White;
+  display: none;
+    }
+    
+ .imgCol
+{ width:150px;
+  height:150px;
+  margin:30px 25px 10px 25px;
+}
+
+.captcha
+{height:40px;
+ width:149px;
+    }
+    
+.mgerror
+{color:Red ; 
+ font-size:16px;
+ float: left;
+    }
+    
+
+.notFound
+{
+    margin-left: 20px;
+    font-size:18px;
+    }

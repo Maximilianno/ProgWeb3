@@ -1,0 +1,10 @@
+C:\Users\Sergio\Desktop\Programacion Web III\Trabajo Practico\UNLAMPW3_G2\project\VisualStudio\bin\VisualStudio.dll
+C:\Users\Sergio\Desktop\Programacion Web III\Trabajo Practico\UNLAMPW3_G2\project\VisualStudio\bin\VisualStudio.pdb
+C:\Users\Sergio\Desktop\Programacion Web III\Trabajo Practico\UNLAMPW3_G2\project\VisualStudio\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Sergio\Desktop\Programacion Web III\Trabajo Practico\UNLAMPW3_G2\project\VisualStudio\obj\Debug\VisualStudio.dll
+C:\Users\Sergio\Desktop\Programacion Web III\Trabajo Practico\UNLAMPW3_G2\project\VisualStudio\obj\Debug\VisualStudio.pdb
+C:\Users\maxi\Documents\Visual Studio 2010\Projects\project\VisualStudio\bin\VisualStudio.dll
+C:\Users\maxi\Documents\Visual Studio 2010\Projects\project\VisualStudio\bin\VisualStudio.pdb
+C:\Users\maxi\Documents\Visual Studio 2010\Projects\project\VisualStudio\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\maxi\Documents\Visual Studio 2010\Projects\project\VisualStudio\obj\Debug\VisualStudio.dll
+C:\Users\maxi\Documents\Visual Studio 2010\Projects\project\VisualStudio\obj\Debug\VisualStudio.pdb
