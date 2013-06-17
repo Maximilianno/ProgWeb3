@@ -66,7 +66,7 @@ namespace VisualStudio.VS.Datos
             sqlconn.Close();
         }
 
-        public DataRow obtenerTienda(String email)
+        public DataTable obtenerTienda(String email)
         {
             if (conectar())
             {
@@ -79,14 +79,17 @@ namespace VisualStudio.VS.Datos
                 miComando.Parameters.Add(paramEmail);
 
                 MiTabla.Load(miComando.ExecuteReader());
-                
-                
-                miFila = MiTabla.Rows[0];//id
-                miFila = MiTabla.Rows[1];//email
-                miFila = MiTabla.Rows[2];//razon social
-                miFila = MiTabla.Rows[3];//cuit
-                miFila = MiTabla.Rows[5];//estado
-                return miFila;
+                return MiTabla;
+
+                //SqlDataReader reader = miComando.ExecuteReader();
+
+
+                //miFila.ItemArray[0] = reader[0];//id
+                //miFila.ItemArray[1] = reader[1];//email
+                //miFila.ItemArray[2] = reader[2];//razon social
+                //miFila.ItemArray[3] = reader[3];//cuit
+                //miFila.ItemArray[5] = reader[5];//estado
+                //return miFila;
                 
 
             }

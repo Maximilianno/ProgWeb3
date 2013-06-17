@@ -19,6 +19,7 @@ namespace VisualStudio.VS
                 txtbxRazonSocial.Text = tienda.RazonSocial;
                 txtbxCUIT.Text = tienda.CUIT;
                 txtbxMail.Text = tienda.Email;
+                txtbxPassword.Text = tienda.Password;
             }
         }
 

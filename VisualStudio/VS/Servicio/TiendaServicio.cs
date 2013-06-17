@@ -18,7 +18,7 @@ namespace VisualStudio.VS.Servicio
             nuevo.insertarNuevaTienda(tienda);          
         }
 
-        public DataRow obtener(string email)
+        public DataTable obtener(string email)
         {
             return nuevo.obtenerTienda(email);
         }

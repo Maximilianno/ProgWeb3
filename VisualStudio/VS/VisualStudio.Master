@@ -46,7 +46,7 @@
                 </div>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="login" ErrorMessage="*"  ToolTip="Escriba su contraseña" CssClass="errorMessage"  Display="Dynamic" ForeColor="White"   ControlToValidate="txtPassword"></asp:RequiredFieldValidator>
             
-            <asp:Label ID="lblMsjLog" runat="server" Text="ESTE ES EL TEXTO QUE SE MODIFICARA!!"></asp:Label>
+            <asp:Label ID="lblMsjLog" runat="server" Text=""></asp:Label>
             
            <div class="buttom"><asp:Button ID="Log" runat="server" Text="Aceptar" 
                    ValidationGroup="login" onclick="Log_Click" /></div>

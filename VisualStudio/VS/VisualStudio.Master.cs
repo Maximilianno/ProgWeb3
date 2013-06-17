@@ -29,13 +29,15 @@ namespace VisualStudio.VS
             {
                 Tienda userTienda = new Tienda();
                 DataTable tabla = new DataTable();
-                DataRow miTienda = tabla.NewRow();
-                miTienda = tiendaServicio.obtener(txtEmail.Text);
-                userTienda.Id = Convert.ToInt32(miTienda[0]);
-                userTienda.Email = Convert.ToString(miTienda[1]);
-                userTienda.RazonSocial = Convert.ToString(miTienda[2]);
-                userTienda.CUIT = Convert.ToString(miTienda[3]);
-                userTienda.Estado = Convert.ToString(miTienda[5]);
+                
+                tabla = tiendaServicio.obtener(txtEmail.Text);
+
+                userTienda.Password = Convert.ToString(tabla.Rows[0]["Password"]);
+                userTienda.Id = Convert.ToInt32(tabla.Rows[0]["Id"]);
+                userTienda.Email = Convert.ToString(tabla.Rows[0]["Email"]);
+                userTienda.RazonSocial = Convert.ToString(tabla.Rows[0]["RazonSocial"]);
+                userTienda.CUIT = Convert.ToString(tabla.Rows[0]["CUIT"]);
+                userTienda.Estado = Convert.ToString(tabla.Rows[0]["Estado"]);
 
                 Session["TiendaOnline"] = userTienda;
                 
