@@ -30,7 +30,7 @@ namespace VisualStudio.VS
                 tienda.Email = txtbxMail.Text;
                 tienda.Password = txtbxContrasena.Text;
                 tienda.CUIT = txtbxCUIT.Text;
-                tienda.Estado = "P";
+                
                 TiendaServicio tiendaServicio = new TiendaServicio();
                 tiendaServicio.insertar(tienda);
 

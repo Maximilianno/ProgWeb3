@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using VisualStudio.Entidad;
 
 namespace VisualStudio.VS
 {
@@ -13,17 +14,19 @@ namespace VisualStudio.VS
         {
             if (!Page.IsPostBack)
             {
-                //txtbxRazonSocial.Text = Session["RazonSocial"].ToString();
-                //txtbxCUIT.Text = Session["CUIT"].ToString();
-                //txtbxMail.Text = Session["Email"].ToString();
+                Tienda tienda = new Tienda();
+                tienda = (Tienda)Session["TiendaOnline"];
+                txtbxRazonSocial.Text = tienda.RazonSocial;
+                txtbxCUIT.Text = tienda.CUIT;
+                txtbxMail.Text = tienda.Email;
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            Session["RazonSocial"] = txtbxRazonSocial.Text;
-            Session["CUIT"] = txtbxCUIT.Text;
-            Session["Email"] = txtbxMail.Text;
+
         }
+
+        
     }
 }

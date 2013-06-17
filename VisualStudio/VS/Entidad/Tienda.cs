@@ -8,6 +8,8 @@ namespace VisualStudio.Entidad
     public class Tienda
     {
         public String RazonSocial{set; get;}
+        public int Id { set; get; }
+        public int IdRegistracion { set; get; }
         public String Email { set; get; }
         public String Password { set; get; }
         //string ConfirmPassword{ set; get; }

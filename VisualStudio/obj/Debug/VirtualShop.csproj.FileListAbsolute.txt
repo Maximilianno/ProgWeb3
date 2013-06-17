@@ -8,3 +8,8 @@ C:\Users\maxi\Documents\Visual Studio 2010\Projects\project\VisualStudio\bin\Vis
 C:\Users\maxi\Documents\Visual Studio 2010\Projects\project\VisualStudio\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\maxi\Documents\Visual Studio 2010\Projects\project\VisualStudio\obj\Debug\VisualStudio.dll
 C:\Users\maxi\Documents\Visual Studio 2010\Projects\project\VisualStudio\obj\Debug\VisualStudio.pdb
+C:\Users\maxi\Desktop\Fork\VisualStudio\bin\VisualStudio.dll
+C:\Users\maxi\Desktop\Fork\VisualStudio\bin\VisualStudio.pdb
+C:\Users\maxi\Desktop\Fork\VisualStudio\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\maxi\Desktop\Fork\VisualStudio\obj\Debug\VisualStudio.dll
+C:\Users\maxi\Desktop\Fork\VisualStudio\obj\Debug\VisualStudio.pdb

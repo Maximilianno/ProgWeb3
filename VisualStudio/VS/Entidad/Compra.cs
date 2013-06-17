@@ -7,9 +7,12 @@ namespace VisualStudio.Entidad
 {
     public class Compra
     {
-        long Id { set; get; }
-        string Email { set; get; }
+        int Id { set; get; }
+        int IdProducto { set; get; }
+        string EmailComprador { set; get; }
         DateTime FechaTransaction { set; get; }
-        IList<Producto> productos;
+        int Cantidad { set; get; }
+        int PrecioUnitario { set; get; }
+        string Estado { set; get; }
     }
 }

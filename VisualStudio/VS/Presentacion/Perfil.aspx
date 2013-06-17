@@ -35,14 +35,15 @@
             <div class="oneControl"><asp:Label ID="lblEstado" runat="server" Text="" >Estado:</asp:Label></div>
             <div class="oneControl">
                 <asp:DropDownList ID="ddlEstado" runat="server">
-                <asp:ListItem>Activado</asp:ListItem>
-                <asp:ListItem>Desactivado</asp:ListItem>
+                <asp:ListItem Value="activado">Activado</asp:ListItem>
+                <asp:ListItem Value="desactivado">Desactivado</asp:ListItem>
                 </asp:DropDownList>
             </div>
             </div>
 
             <div>     
-                <p class="oneControl"><asp:Button ID="btnGuardar" ValidationGroup = "perfil" runat="server" Text="Guardar"  onclick="Button1_Click" /></p>
+                <p class="oneControl"><asp:Button ID="btnGuardar" ValidationGroup = "perfil" 
+                        runat="server" Text="Guardar" onclick="btnGuardar_Click" /></p>
             </div>
         </div>
 

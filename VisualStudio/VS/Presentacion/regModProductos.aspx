@@ -37,7 +37,7 @@
              <asp:RangeValidator ID="rgPrecio" runat="server" ValidationGroup = "producto" ErrorMessage="* Ingrese el precio correctamente." ControlToValidate="txtbxPrecio"  Display="Dynamic" Font-Size="X-Small" Type="Integer" MaximumValue="100000"  MinimumValue="1"></asp:RangeValidator>
             <div>
                 <div class="oneControl"> <asp:Label ID="catelblCategoria" runat="server" Text="Categor&iacutea:"></asp:Label></div>
-                <div class="oneControl"><uc:ElegirCategoria id="ElegirCategoria" runat="server"/></div>
+                <div class="oneControl"><uc:ElegirCategoria id="ucElegirCategoria" runat="server"/></div>
             </div>
              
              <div>
@@ -47,7 +47,8 @@
            
             <div>
                 <div class="controlers">
-                    <asp:Button ID="create" runat="server" ValidationGroup = "producto" Text="Crear" />
+                    <asp:Button ID="create" runat="server" ValidationGroup = "producto" 
+                        Text="Crear" onclick="create_Click" />
                     <asp:Button ID="mod" runat="server" ValidationGroup = "producto" Text="Modificar" />
                     
                 </div>

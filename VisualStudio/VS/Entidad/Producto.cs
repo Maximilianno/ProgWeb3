@@ -7,14 +7,15 @@ namespace VisualStudio.Entidad
 {
     public class Producto
     {
-        string TiendaRazonSocial { set; get; }
-        string TiendaEmail { set; get; }
-        string Nombre { get; set; }
-        string Descript { get; set; }
-        float Precio { get; set; }
-        int Stock { get; set; }
-        Categoria categoria;
-        string PathImg { get; set; }
+        public string TiendaRazonSocial { set; get; }
+        public int ID { set; get; }
+        public int idTienda { set; get; }
+        public int IdCategoria { set; get; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+        public float Precio { get; set; }
+        public int Stock { get; set; }
+        public Byte Imagen { get; set; }
         
      
         

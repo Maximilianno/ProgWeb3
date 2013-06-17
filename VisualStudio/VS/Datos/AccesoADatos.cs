@@ -47,7 +47,7 @@ namespace VisualStudio.VS.Datos
                 SqlParameter paramEmail = new SqlParameter("@EMAIL", tienda.Email);
                 SqlParameter paramPassword = new SqlParameter("@PASSWORD", tienda.Password);
                 SqlParameter paramCUIT = new SqlParameter("@CUIT", tienda.CUIT);
-                SqlParameter paramEstado = new SqlParameter("@ESTADO", tienda.Estado);
+                
                 
                
                 
@@ -60,33 +60,40 @@ namespace VisualStudio.VS.Datos
                 miComando.Parameters.Add(paramPassword);
                 miComando.Parameters.Add(paramCUIT);
                 miComando.Parameters.Add(paramEmail);
-                miComando.Parameters.Add(paramEstado);
+                
                 miComando.ExecuteNonQuery();
             }
             sqlconn.Close();
         }
 
-        public DataTable obtenerEmpresa()
+        public DataRow obtenerTienda(String email)
         {
             if (conectar())
             {
                 DataTable MiTabla = new DataTable();
-                SqlDataAdapter Comando = new SqlDataAdapter("SELECT * FROM Empresa", sqlconn);
-                Comando.Fill(MiTabla);
-                return MiTabla;
+                DataRow miFila = MiTabla.NewRow();
+                SqlParameter paramEmail = new SqlParameter("@EMAIL", email); //Envio el paramerto a insertar
+
+                SqlCommand miComando = new SqlCommand("p_BuscarTienda", sqlconn); //ejecuto la StoreProcedure en la BD
+                miComando.CommandType = CommandType.StoredProcedure;
+                miComando.Parameters.Add(paramEmail);
+
+                MiTabla.Load(miComando.ExecuteReader());
                 
+                
+                miFila = MiTabla.Rows[0];//id
+                miFila = MiTabla.Rows[1];//email
+                miFila = MiTabla.Rows[2];//razon social
+                miFila = MiTabla.Rows[3];//cuit
+                miFila = MiTabla.Rows[5];//estado
+                return miFila;
+                
+
             }
             else return null;
 
         }
 
-        public void UpdateEmpresa(string name)
-        {
-            if (conectar())
-            {
-                
-            }
-        }
 
         //Listar Provincias
        /* public DataSet mostrarProvincias()
@@ -104,64 +111,67 @@ namespace VisualStudio.VS.Datos
 
 
 
-        public void editarEmpresa(Tienda tienda)
+        public void editarTienda(Tienda tienda)
         {
             if (conectar())
             {
 
-                SqlParameter paramRazonSocial = new SqlParameter("@RAZONSOCIAL",tienda.RazonSocial); //Envio el paramerto a insertar
-                SqlParameter paramEmail = new SqlParameter("@EMAIL", tienda.Email);
+                SqlParameter paramEmail = new SqlParameter("@EMAIL",tienda.Email); //Envio el paramerto a insertar
+                SqlParameter paramRazonSocial = new SqlParameter("@RAZONSOCIAL", tienda.RazonSocial);
+                SqlParameter paramCUIT = new SqlParameter("@CUIT", tienda.CUIT  );
                 SqlParameter paramPassword = new SqlParameter("@PASSWORD", tienda.Password);
-                SqlParameter paramCUIT = new SqlParameter("@CUIT", tienda.CUIT);
                 SqlParameter paramEstado = new SqlParameter("@ESTADO", tienda.Estado);
 
 
                 SqlCommand miComando = new SqlCommand("p_ModificarTienda", sqlconn); //ejecuto la StoreProcedure en la BD
                 miComando.CommandType = CommandType.StoredProcedure;
+                miComando.Parameters.Add(paramEmail);
                 miComando.Parameters.Add(paramRazonSocial);
-                miComando.Parameters.Add(paramEmail);
-                miComando.Parameters.Add(paramPassword);
                 miComando.Parameters.Add(paramCUIT);
-                miComando.Parameters.Add(paramEmail);
+                miComando.Parameters.Add(paramPassword);
                 miComando.Parameters.Add(paramEstado);
+                
                 miComando.ExecuteNonQuery();
             sqlconn.Close();
         }
         }
 
-        internal void eliminarTienda(string Email)
+        internal void eliminarTienda(int ID)
         {
             if (conectar())
             {
-                SqlParameter paramEmail = new SqlParameter("@EMAIL", Email);
+                SqlParameter paramID = new SqlParameter("@ID", ID);
 
                 SqlCommand miComando = new SqlCommand("p_EliminarTienda", sqlconn); //ejecuto la StoreProcedure en la BD
                 miComando.CommandType = CommandType.StoredProcedure;
-                miComando.Parameters.Add(paramEmail);
+                miComando.Parameters.Add(paramID);
                 miComando.ExecuteNonQuery();
             }
            
         }
 
-        public int buscarTienda(string nombreTienda)
+        public int loginTienda(string email)
         {
                 
                 if (conectar())
                 {
 
-                    SqlParameter paramRazonSocial = new SqlParameter("@RAZONSOCIAL", nombreTienda);
+                    SqlParameter paramEmail = new SqlParameter("@EMAIL", email);
+                    //SqlParameter parmaPassword = new SqlParameter("@PASSWORD", password);
                     SqlParameter paramValidador = new SqlParameter("@VALIDADOR", SqlDbType.Int, 1);
                     paramValidador.Direction = ParameterDirection.Output;
 
-                    SqlCommand miComando = new SqlCommand("BuscarEmpresa", sqlconn); //ejecuto la StoreProcedure en la BD
+                    SqlCommand miComando = new SqlCommand("p_Login2", sqlconn); //ejecuto la StoreProcedure en la BD
                     miComando.CommandType = CommandType.StoredProcedure;
-                    miComando.Parameters.Add(paramRazonSocial);
+                    miComando.Parameters.Add(paramEmail);
+                    
                     miComando.Parameters.Add(paramValidador);
 
 
                     miComando.ExecuteNonQuery();
 
                     resultado = miComando.Parameters["@VALIDADOR"].Value;
+                    return Convert.ToInt32(resultado);
                     
                 }
             
@@ -170,20 +180,70 @@ namespace VisualStudio.VS.Datos
                 return returnValor;
         }
 
-        public void activarTienda(string modo, string nombreTienda)
+        public void activarTiendaPorEmail(string modo, string email)
         {
             if (conectar())
             {
 
-                SqlParameter paramRazonSocial = new SqlParameter("@RAZONSOCIAL", nombreTienda); //Envio el paramerto a insertar
+                SqlParameter paramEmail = new SqlParameter("@EMAIL", email); //Envio el paramerto a insertar
                 SqlParameter paramEstado = new SqlParameter("@MODO", modo);
-                SqlCommand miComando = new SqlCommand("ActivarEmpresa", sqlconn); //ejecuto la StoreProcedure en la BD
+                SqlCommand miComando = new SqlCommand("p_ActivarTienda", sqlconn); //ejecuto la StoreProcedure en la BD
                 miComando.CommandType = CommandType.StoredProcedure;
-                miComando.Parameters.Add(paramRazonSocial);
+                miComando.Parameters.Add(paramEmail);
                 miComando.Parameters.Add(paramEstado);
                 miComando.ExecuteNonQuery();
             }
             sqlconn.Close();
         }
+
+        public void insertarNuevoProducto(Producto producto)
+        {
+            if (conectar())
+            {
+                List<SqlParameter> lista = new List<SqlParameter>();
+
+                SqlParameter paramIdTienda = new SqlParameter("@IDTIENDA",producto.idTienda); //Envio el paramerto a insertar
+                SqlParameter parmaNombre = new SqlParameter("@NOMBRE", producto.Nombre);
+                SqlParameter paramDescripcion = new SqlParameter("@DESCRIPCION", producto.Descripcion);
+                SqlParameter parmaPrecio = new SqlParameter("@PRECIO", producto.Precio);
+                SqlParameter paramStock = new SqlParameter("@STOCK", producto.Stock);
+                
+                
+               
+                
+                
+
+                SqlCommand miComando = new SqlCommand("p_CrearTienda", sqlconn); //ejecuto la StoreProcedure en la BD
+                miComando.CommandType = CommandType.StoredProcedure;
+                miComando.Parameters.Add(paramIdTienda);
+
+                miComando.Parameters.Add(parmaNombre);
+                miComando.Parameters.Add(parmaNombre);
+                miComando.Parameters.Add(paramDescripcion);
+                miComando.Parameters.Add(parmaPrecio);
+                miComando.ExecuteNonQuery();
+            }
+            sqlconn.Close();
+        
+        }
+
+        
+
+        internal void editarProducto(Producto producto)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal int buscarProducto(string nombreProducto)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void eliminarProducto(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        
     }
 }

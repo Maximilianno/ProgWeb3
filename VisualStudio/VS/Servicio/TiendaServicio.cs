@@ -18,30 +18,32 @@ namespace VisualStudio.VS.Servicio
             nuevo.insertarNuevaTienda(tienda);          
         }
 
-        public DataTable listar()
+        public DataRow obtener(string email)
         {
-            return nuevo.obtenerEmpresa();
+            return nuevo.obtenerTienda(email);
         }
 
         public void editar(Tienda tienda)
         {
-            nuevo.editarEmpresa(tienda);
+            nuevo.editarTienda(tienda);
         }
 
-        public void eliminar(string Email)
+        public void eliminar(int ID)
         {
-            nuevo.eliminarTienda(Email);
+            nuevo.eliminarTienda(ID);
         }
 
-        public int buscarEmpresa(string nombreTienda)
+        public int loginTienda(string email)
         {
-           return nuevo.buscarTienda(nombreTienda);
+            return nuevo.loginTienda(email);
         }
 
-        public void activarTienda(string modo, string nombreTienda)
+        public void activarTienda(string modo, string email)
         {
-            nuevo.activarTienda(modo, nombreTienda);
+            nuevo.activarTiendaPorEmail(modo, email);
         }
+        
+
     }
     
 }

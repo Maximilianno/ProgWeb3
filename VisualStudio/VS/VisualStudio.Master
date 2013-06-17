@@ -27,7 +27,7 @@
                    
                 </div>
          <div class="link">
-            <asp:HyperLink ID="HyperLink1" CssClass="link" runat="server" NavigateUrl="~/VS/pages/regLog.aspx">Crea tu tienda virtual</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink1" CssClass="link" runat="server" NavigateUrl="~/VS/Presentacion/regLog.aspx">Crea tu tienda virtual</asp:HyperLink>
         </div>       
 
         <div class="login">

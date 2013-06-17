@@ -133,6 +133,7 @@
     <Compile Include="VS\Presentacion\Perfil.aspx.designer.cs">
       <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VS\Servicio\ProductoServicio.cs" />
     <Compile Include="VS\Servicio\TiendaServicio.cs" />
     <Compile Include="VS\userControls\ucElegirCategoria.ascx.cs">
       <DependentUpon>ucElegirCategoria.ascx</DependentUpon>
@@ -237,7 +238,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>45876</DevelopmentServerPort>
+          <DevelopmentServerPort>3384</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
