@@ -43,6 +43,11 @@
              <div>
                 <div class="oneControl"> <asp:Label ID="lbImg" runat="server" Text="Imagen:"></asp:Label></div>
                 <div class="oneControl"> <asp:FileUpload ID="fuTiendaImg" runat="server" /></div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="btnUpload" runat="server" Text="Upload" 
+                     onclick="btnUpload_Click" />
+                <br/>
+                <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
             </div>
            
             <div>

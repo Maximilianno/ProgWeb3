@@ -13,3 +13,8 @@ C:\Users\maxi\Desktop\Fork\VisualStudio\bin\VisualStudio.pdb
 C:\Users\maxi\Desktop\Fork\VisualStudio\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\maxi\Desktop\Fork\VisualStudio\obj\Debug\VisualStudio.dll
 C:\Users\maxi\Desktop\Fork\VisualStudio\obj\Debug\VisualStudio.pdb
+C:\Users\Sergio\Desktop\Programacion Web III\Trabajo Practico\ProgWeb3\VisualStudio\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Sergio\Desktop\Programacion Web III\Trabajo Practico\ProgWeb3\VisualStudio\obj\Debug\VisualStudio.dll
+C:\Users\Sergio\Desktop\Programacion Web III\Trabajo Practico\ProgWeb3\VisualStudio\obj\Debug\VisualStudio.pdb
+C:\Users\Sergio\Desktop\Programacion Web III\Trabajo Practico\ProgWeb3\VisualStudio\bin\VisualStudio.dll
+C:\Users\Sergio\Desktop\Programacion Web III\Trabajo Practico\ProgWeb3\VisualStudio\bin\VisualStudio.pdb
